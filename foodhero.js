@@ -10,3 +10,16 @@ fetch('https://edamam-food-and-grocery-database.p.rapidapi.com/parser?ingr=apple
 	.then(response => response.json())
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
+
+    userInput = "";
+    
+    function getFood() {
+        userInput = document.getElementById("userInput");
+
+    };
+
+    function findFood() {
+
+    };
+
+
