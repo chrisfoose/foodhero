@@ -8,11 +8,22 @@ const options = {
 
 const getData = async () => {
     try {
+        url="https://edamam-food-and-grocery-database.p.rapidapi.com/parser?ingr=apple"
+        const response = await fetch(url);
         fetch('https://edamam-food-and-grocery-database.p.rapidapi.com/parser?ingr=apple', options)
 	    .then(response => response.json())
 	    .then(response => console.log(response))
 	    .catch(err => console.error(err));
-        food = response.json;
+        const food = response.json();
+        return food.map(function getFood() {
+            let userInput = document.getElementById("userInput");
+            return `
+            <div id="results">
+            {$food}
+            </div>
+            `
+        });
+
     } catch (error) {
         console.log(error);
         alert('Error');
@@ -24,24 +35,30 @@ fetch('https://edamam-food-and-grocery-database.p.rapidapi.com/parser?ingr=apple
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
 
-    let userInput = "";
-    let html = ``;
     
-    function getFood() {
+    function getFood(userInput) {
         userInput = document.getElementById("userInput");
+       for (i= 0; i = food; i++ ) {
+
+       
+                return `
+                <div id="results">
+                ${food[i]};
+
+                </div>
+                `
+            }
 
     };
 
-    function findFood() {
-        if (userInput != "") {
-            return `
-            <div id="results">
-            ${getData.food}
-            </div>
-            `
-        }
-
-    };
+    // function findFood() {
+    //     if (userInput != "") {
+    //         return `
+    //         <div id="results">
+    //         ${getData.food}
+    //         </div>
+    //         `
+    //     }
 
 
 
