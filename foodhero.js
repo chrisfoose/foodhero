@@ -6,7 +6,7 @@ const options = {
     }
 };
 
-document.getElementById("sendFood").addEventListener("click", async (e) =>) {
+document.getElementById("sendFood").addEventListener("click", async (e) => {
     const inputVal = document.getElementById("userinput").ariaValueMax;
     const res = await fetch(
         'https://edamam-food-and-grocery-database.p.rapidapi.com/parser?ingr=$(inputval)',
